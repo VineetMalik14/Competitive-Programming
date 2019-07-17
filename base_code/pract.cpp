@@ -2,22 +2,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
+typedef long long   ll;
 typedef long double ld;
-#define mod ll(1000000007)
-#define mod1 ll(998244353)
-#define mox ll(200005)
-#define inf ll(1e18)
-#define fol(i,a,b) for(ll i=a; i<b; i++)
-#define vll vector<ll>
-#define pll pair<ll,ll>
-#define mk make_pair
-#define pb push_back
-#define po pop_back
-#define ff first
-#define ss second
-#define bb begin()
-#define ee end()
+#define mod         ll(1000000007)
+#define mod1        ll(998244353)
+#define mox         ll(200005)
+#define inf         ll(1e18)
+#define fol(i,a,b)  for(ll i=a; i<b; i++)
+#define vll         vector<ll>
+#define pll         pair<ll,ll>
+#define mk          make_pair
+#define pb          push_back
+#define po          pop_back
+#define ff          first
+#define ss          second
+#define bb          begin()
+#define ee          end()
+#define endl        '\n'
+#define debug(x)    cerr << #x << " = " << x << "\n";
+#define deci(n)     cout<<fixed<<setprecision(n);
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 ll grand(ll x) { // [0, x-1]
