@@ -1,8 +1,8 @@
 #pragma GCC optimize("O3")
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-typedef long long int ll;
+typedef long long ll;
 typedef long double ld;
 #define mod ll(1000000007)
 #define mod1 ll(998244353)
@@ -10,6 +10,7 @@ typedef long double ld;
 #define inf ll(1e18)
 #define fol(i,a,b) for(ll i=a; i<b; i++)
 #define vll vector<ll>
+#define pll pair<ll,ll>
 #define mk make_pair
 #define pb push_back
 #define po pop_back
@@ -19,34 +20,38 @@ typedef long double ld;
 #define ee end()
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-ll grand(ll x) {
+ll grand(ll x) { // [0, x-1]
     return uniform_int_distribution<ll>(0, x-1)(rng);
 }
 
 ll gcd(ll a, ll b){
-	if(b==0) return a;
-	if(a==0) return b;
-	return gcd(b,a%b);
+    ll mi=min(a, b), mx=max(a, b);
+    while(mi!=0){
+        ll temp=mi;
+        mi=mx%mi;
+        mx=temp;
+    }
+    return mx;
 }
-ll pw(ll x, ll y){ 
-    	if(y==0)	return 1; 
-	ll r=pw(x,y/2);
-    	if(y%2==0) 	return r*r; 
-    	else		return x*r*r; 
-}
-ll binarySearch(vll a, ll l, ll r, ll x){
-	ll mid;
-	while(l<=r){
-        	mid=l+(r-l)/2;
-		if(a[mid]==x)		return mid;
-		else if(a[mid]<x)	l=mid+1;
-		else			r=mid-1;
-	}
-	return -1;
+
+ll pw(ll x, ll n){
+    if(x==0){
+        return 0;
+    }
+    ll ans=1;
+    while(n!=0){
+        if(n&1ll){
+            ans*=x;
+        }
+        x*=x;
+        n>>=1ll;
+    }
+    return ans;
 }
 
 
-int main(){
+int main()
+{
 	ios :: sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
 	
