@@ -1,6 +1,9 @@
 #pragma GCC optimize("O3")
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
+using namespace __gnu_pbds;
 
 typedef long long   ll;
 typedef long double ld;
@@ -22,6 +25,12 @@ typedef long double ld;
 #define dbg(x)      cout << #x << " = " << x << '\n'
 #define deci_pre(n) cout<<fixed<<setprecision(n)
 
+typedef tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update> oset;
+
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+ll grand(ll x) { // [0, x-1]
+    return uniform_int_distribution<ll>(0, x-1)(rng);
+}
 
 ll gcd(ll a, ll b){
     ll mi=min(a, b), mx=max(a, b);
@@ -54,6 +63,6 @@ int main()
     ios :: sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
 	
-
+    
     return 0;
 }
