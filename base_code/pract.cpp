@@ -18,6 +18,7 @@ typedef long double ld;
 #define ss          second
 #define bb          begin()
 #define ee          end()
+#define zz          size()
 #define nn          '\n'
 #define dbg(x)      cout << #x << " = " << x << '\n'
 #define deci_pre(n) cout<<fixed<<setprecision(n)
