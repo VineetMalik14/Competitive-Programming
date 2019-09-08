@@ -60,44 +60,8 @@ ll pw(ll x, ll n){
 
 int main()
 {
-    ios :: sync_with_stdio(false); cin.tie(0); cout.tie(0);
+	ios :: sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
-	ll n; cin>>n;
-    set<ll> sty;
-    map<ll, ll> mpx;
-    map<ll, set<ll> > mpy;
-    oset stx;
-	fol(i,0,n){
-		ll x, y; cin>>x>>y;
-		mpx[x]++;
-        mpy[y].insert(x);
-		stx.insert(x);
-        sty.insert(y);
-	}
-    ll sz=mpx.size();
-    ll ans=(sz*(sz+1))/2;
-    for(auto i : sty){
-        set<ll> cl;
-        ll pre=0;
-        for(auto j : mpy[i]){
-            mpx[j]--;
-            if(mpx[j]==0){
-                cl.insert(j);
-            }
-            ll k=stx.order_of_key(j);
-            k-=pre;
-            ans-=(k*(k+1))/2;
-            pre+=k+1;
-        }
-        pre=stx.size()-pre;
-        ans-=(pre*(pre+1))/2;
-        for(auto j : cl){
-            stx.erase(j);
-            mpx.erase(j);
-        }
-        sz=mpx.size();
-        ans+=(sz*(sz+1))/2;
-    }
-    cout<<ans<<nn;
+	
 	return 0;
 }
