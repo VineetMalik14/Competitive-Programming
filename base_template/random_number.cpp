@@ -6,7 +6,7 @@ typedef long long   ll;
 typedef long double ld;
 #define mod         ll(1000000007)
 #define mod1        ll(998244353)
-#define mox         ll(300005)
+#define mox         ll(200005)
 #define inf         ll(1e18)
 #define rep(i,a,b)  for(ll i=a; i<b; i++)
 #define vll         vector<ll>
@@ -22,6 +22,11 @@ typedef long double ld;
 #define nn          '\n'
 #define dbg(x)      cout << #x << " = " << x << '\n'
 #define deciPRE(n)  cout<<fixed<<setprecision(n)
+
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+ll grand(ll x){    // [0, x-1]
+    return uniform_int_distribution<ll>(0, x-1)(rng);
+}
 
 ll gcd(ll a, ll b){
     ll mi=min(a, b), mx=max(a, b), temp;
@@ -54,6 +59,6 @@ int main()
     ios :: sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
 	
-
+    
     return 0;
 }
